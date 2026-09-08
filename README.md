@@ -3,7 +3,7 @@
 Chercheur indépendant sur les interactions humain-IA.
 
 J'écris sur [mecanique-invisible.com](https://mecanique-invisible.com) et je construis des
-applications où un modèle agit réellement — fichiers, système, dépenses — plutôt que de se
+applications où un modèle agit réellement, fichiers, système, dépenses, plutôt que de se
 contenter de répondre. Ce qui m'intéresse est ce qui casse à ce moment-là : un agent qui
 affirme avoir fait ce qu'il n'a pas fait, un outil appelé avec un argument inventé, un
 garde-fou qui tient en démonstration et cède en usage réel.
