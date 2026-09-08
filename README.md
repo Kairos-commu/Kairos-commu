@@ -1,4 +1,4 @@
-## Florent
+## Florent Klimacek
 
 Chercheur indépendant sur les interactions humain-IA.
 
