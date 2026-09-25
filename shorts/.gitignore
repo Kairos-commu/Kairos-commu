@@ -1,0 +1,10 @@
+captures/
+sorties/
+musiques/
+*.mp4
+*.mkv
+*.webm
+*.mov
+*.png
+__pycache__/
+*.mots.json
