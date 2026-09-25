@@ -1,0 +1,67 @@
+# Exemple complet — copie-le, ou pars de « python shorts.py analyser ta-capture.mkv ».
+# Tous les temps sont ceux de la CAPTURE : 42, 42.5, "0:42" ou "1:02:03.5".
+
+source = "../captures/kora-courrier.mkv"
+sortie = "../sorties/kora-courrier.mp4"
+
+titre = "Kora trie mes mails\nsans rien envoyer"   # l'accroche, lue dans la 1re seconde
+titre_duree = 0                 # 0 = tout le short ; sinon en secondes
+disposition = "cadre"           # « cadre » : carte 4:5 arrondie sur fond flouté ; « plein » : 9:16
+couleur_accent = "#FFD400"      # titre, mot prononcé, barre de progression
+police = "DejaVu Sans"          # ex. « Montserrat ExtraBold » si installée
+# dossier_polices = "../polices"
+
+langue = "fr"
+modele_whisper = "small"        # tiny | base | small | medium | large-v3 (plus lent, plus juste)
+vocabulaire = "Kora, Choragos, Ollama, Florent."
+mots_par_groupe = 3
+majuscules = true
+
+# musique = "../musiques/fond.mp3"
+# musique_db = -20              # volume de base ; baissée encore quand quelqu'un parle
+lufs = -14                      # cible des plateformes
+barre_progression = true
+transition = 0.6                # durée par défaut d'un mouvement de caméra (s)
+
+# ── Montage : ce qu'on garde. Entre deux segments, c'est coupé.
+[[segment]]
+debut = "00:03"
+fin = "00:21.5"
+
+[[segment]]
+debut = "00:21.5"
+fin = "00:58"
+vitesse = 4                     # Kora réfléchit : accéléré, son coupé, étiquette « ▶▶ ×4 »
+# son = true                    # garder le son accéléré
+# etiquette = "Kora lit 42 mails"
+
+[[segment]]
+debut = "01:04"
+fin = "01:19"
+
+# ── Caméra : à l'instant t, elle part vers la zone [x, y, largeur, hauteur] (pixels de la capture).
+[[cadrage]]
+t = "00:03"
+zone = "tout"
+
+[[cadrage]]
+t = "00:06"
+zone = [1280, 80, 640, 800]     # le panneau de conversation
+
+[[cadrage]]
+t = "01:04"
+zone = [560, 300, 800, 500]     # l'orbe
+transition = 1.2
+
+# ── Floutage : rien de privé ne sort de ton écran.
+[[flou]]
+debut = "00:00"
+fin = "01:19"
+zone = [0, 0, 1920, 36]         # barre du haut : chemins, heure, notifications
+
+# ── Textes posés à l'écran.
+[[texte]]
+debut = "01:04"
+fin = "01:10"
+texte = "Aucun envoi sans ton accord"
+position = "haut"               # haut | milieu | bas
