@@ -6,3 +6,5 @@ musiques/
 *.webm
 *.mov
 *.png
+__pycache__/
+*.mots.json
